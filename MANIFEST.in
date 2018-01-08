@@ -3,4 +3,4 @@ include MANIFEST.in
 include README.*
 include pkg/*
 include setup.py
-recursive-include anyconfig_* *.py
+recursive-include anyconfig_cbor2_backend *.py
