@@ -7,7 +7,7 @@ r"""CBOR backend:
 
 - Format to support: CBOR, http://cbor.io, https://tools.ietf.org/html/rfc7049
 - Requirements: cbor2, https://pypi.python.org/pypi/cbor2
-- Development Status :: 4 - Beta
+- Development Status :: 3 - Alpha
 - Limitations: None obvious
 - Special options:
 

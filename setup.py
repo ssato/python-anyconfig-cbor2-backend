@@ -51,7 +51,7 @@ class RpmCommand(SrpmCommand):
     build_stage = "b"
 
 
-_CLASSIFIERS = ["Development Status :: 4 - Beta",
+_CLASSIFIERS = ["Development Status :: 3 - Alpha",
                 "Intended Audience :: Developers",
                 "Programming Language :: Python",
                 "Programming Language :: Python :: 2",
