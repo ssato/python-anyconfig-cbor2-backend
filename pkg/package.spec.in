@@ -40,6 +40,7 @@ BuildRequires:  python3-setuptools
 
 %description %{desctxt}
 
+# Both python{2,3}-cbor2 are available from my copr repo, ssato/python-anyconfig.
 %package     -n python2-%{pkgname}
 Summary:        %{sumtxt}
 Requires:       python2-anyconfig
