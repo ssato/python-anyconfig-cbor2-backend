@@ -88,5 +88,5 @@ Requires:       python3-cbor2
 %endif
 
 %changelog
-* Sun Jan  7 2018 Satoru SATOH <ssato@redhat.com> - 0.0.1-1
+* Thu Jan 11 2018 Satoru SATOH <ssato@redhat.com> - 0.0.1-1
 - Initial packaging forked from python-anyconfig-cbor-backend
