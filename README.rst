@@ -1,5 +1,5 @@
 ================================
-python-anyconfig-cbor22-backend
+python-anyconfig-cbor2-backend
 ================================
 
 .. image:: https://img.shields.io/travis/ssato/python-anyconfig-cbor2-backend.svg
