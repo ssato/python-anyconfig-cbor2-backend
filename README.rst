@@ -2,6 +2,10 @@
 python-anyconfig-cbor2-backend
 ================================
 
+.. image:: https://img.shields.io/pypi/v/anyconfig-cbor2-backend.svg
+   :target: https://pypi.python.org/pypi/anyconfig-cbor2-backend/
+   :alt: [Latest Verscbor2]
+
 .. image:: https://img.shields.io/travis/ssato/python-anyconfig-cbor2-backend.svg
    :target: https://travis-ci.org/ssato/python-anyconfig-cbor2-backend
    :alt: Test status
