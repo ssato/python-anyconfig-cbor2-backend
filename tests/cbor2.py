@@ -6,7 +6,7 @@
 from __future__ import absolute_import
 
 import anyconfig_cbor2_backend.cbor2 as TT
-import tests.common as TBC
+import tests.base as TBC
 
 
 class HasParserTrait(TBC.HasParserTrait):
