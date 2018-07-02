@@ -18,8 +18,8 @@ python-anyconfig-cbor2-backend
    :target: https://landscape.io/github/ssato/python-anyconfig-cbor2-backend/master
    :alt: Code Health
 
-This is a backend module for python-anyconfig to support to load and dump CBOR
-files w/ using cbor2, https://pypi.python.org/pypi/cbor2.
+This is a backend parser module for python-anyconfig to support to load and
+dump CBOR files w/ using cbor2, https://pypi.python.org/pypi/cbor2.
 
 - Author: Satoru SATOH <ssato@redhat.com>
 - License: MIT
@@ -37,17 +37,17 @@ SEE ALSO:
 Build & Install
 ================
 
-If you're Fedora or Red Hat Enterprise Linux user, try::
+- Pre-built Binary RPMs from my copr repos, https://copr.fedoraproject.org/coprs/ssato/python-anyconfig/
 
-  $ python setup.py srpm && mock dist/<package>-<ver_dist>.src.rpm
-  
-or::
+    ::
 
-  $ python setup.py rpm
+      # Example commands to install pre-built RPMs
+      $ sudo dnf copr enable ssato/python-anyconfig
+      $ sudo dnf install -y python3-anyconfig-cbor2-backend
 
-and install built RPMs. 
-
-Otherwise, try usual ways to build and/or install python modules such like
-'python setup.py bdist', etc.
+- PyPI: pip install anyconfig-cbor2-backend
+- pip from git repo: pip install git+https://github.com/ssato/python-anyconfig-cbor2-backend/
+- Build SRPMs, RPMs and install it: python setup.py srpm && mock dist/<package>-<ver_dist>.src.rpm
+- Others: try usual ways to build and/or install python modules such like 'python setup.py bdist', etc.
 
 .. vim:sw=2:ts=2:et:
