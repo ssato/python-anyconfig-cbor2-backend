@@ -1,24 +1,11 @@
 %global bename cbor2
 %global pkgname anyconfig-%{bename}-backend
-%global debug_package %{nil}
 
-%global sumtxt Backend module for python-anyconfig to support CBOR load and dump
 %global desctxt \
 This is a CBOR backend module for python-anyconfig with using cbor2.\
 \
 python-anyconfig is a python library to provide common APIs to load dump\
 various configuration files like INI, JSON and YAML.
-
-Name:           python-%{pkgname}
-Version:        @VERSION@
-Release:        2%{?dist}
-Summary:        %{sumtxt}
-Group:          Development/Libraries
-License:        MIT
-URL:            https://github.com/ssato/%{name}
-#Source0:        https://github.com/ssato/%{name}/tarball/master/%{name}-%{version}.tar.gz
-Source0:        %{pkgname}-%{version}.tar.gz
-BuildArch:      noarch
 
 %if 0%{?fedora} || 0%{?rhel} > 7
 %bcond_without python3
@@ -26,23 +13,27 @@ BuildArch:      noarch
 %bcond_with python3
 %endif
 
-%if 0%{?rhel} == 7
-BuildRequires:  python-devel
-BuildRequires:  python-setuptools
-%else
+Name:           python-%{pkgname}
+Version:        @VERSION@
+Release:        1%{?dist}
+Summary:        Backend module for python-anyconfig to load and dump CBOR data
+License:        MIT
+URL:            https://github.com/ssato/python-anyconfig-cbor2-backend
+Source0:        %{url}/archive/RELEASE_%{version}.tar.gz
+BuildArch:      noarch
+
 BuildRequires:  python2-devel
 BuildRequires:  python2-setuptools
-%endif
 %if %{with python3}
 BuildRequires:  python3-devel
 BuildRequires:  python3-setuptools
 %endif
 
-%description %{desctxt}
+%description    %{desctxt}
 
 # Both python{2,3}-cbor2 are available from my copr repo, ssato/python-anyconfig.
 %package     -n python2-%{pkgname}
-Summary:        %{sumtxt}
+Summary:        %{summary}
 Requires:       python2-anyconfig
 Requires:       python2-cbor2
 %{?python_provide:%python_provide python2-%{pkgname}}
