@@ -80,6 +80,11 @@ Requires:       python3-cbor2
 %endif
 
 %changelog
+* Mon Jul  2 2018 Satoru SATOH <ssato@redhat.com> - 0.0.3-1
+- fix: follow changes of the argument ioi in load APIs in anyconfig
+- fix: cleanup the RPM SPEC same as anyconfig
+- enhancement: [doc] update description and how to install
+
 * Sun Jan 14 2018 Satoru SATOH <ssato@redhat.com> - 0.0.2-2
 - fix: excluded tests/ from packages
 
