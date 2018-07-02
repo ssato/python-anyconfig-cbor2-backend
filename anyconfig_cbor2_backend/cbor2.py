@@ -15,8 +15,9 @@ r"""CBOR backend:
   - See also: https://github.com/agronholm/cbor2/blob/master/cbor2/
 
 Changelog:
+    .. versionchanged:: 0.0.3
 
-    .. versionadded:: 0.8.4
+    .. versionadded:: 0.0.2
 """
 from __future__ import absolute_import
 import anyconfig.backend.base
