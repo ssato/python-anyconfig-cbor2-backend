@@ -31,6 +31,8 @@ class SrpmCommand(Command):
     def run(self):
         self.pre_sdist()
         self.run_command('sdist')
+        self.copy_file("dist/%s-%s.tar.gz" % (PACKAGE, VERSION),
+                       "dist/RELEASE_%s.tar.gz" % VERSION)
         self.build_rpm()
 
     def pre_sdist(self):
