@@ -9,15 +9,19 @@ language: python
 cache: pip
 # see: http://docs.travis-ci.com/user/migrating-from-legacy/
 sudo: false
+matrix:
+  include:
+    - python: 2.7
+      env: TOXENV=py27-devel
+    - python: 3.6
+      env: TOXENV=py36-devel
 install:
   - if [[ $TRAVIS_PYTHON_VERSION = '3.3' || $TRAVIS_PYTHON_VERSION = '3.4' ]]; then pip install --upgrade pip; fi
   - pip install -r pkg/test_requirements.txt
 env:
-  #global:
-  #  - WITH_COVERAGE=1
-  #  - WITH_DEPS=true
-  - TOXENV=py27-devel WITH_COVERAGE=1
-  - TOXENV=py36-devel WITH_COVERAGE=1
+  global:
+    - WITH_COVERAGE=1
+    - WITH_DEPS=true
 script:
   - tox
 after_success:
