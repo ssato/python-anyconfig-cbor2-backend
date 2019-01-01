@@ -24,6 +24,8 @@ env:
   global:
     - WITH_COVERAGE=1
     - WITH_DEPS=true
+install:
+  - pip install -y tox
 script:
   - tox
 after_success:
