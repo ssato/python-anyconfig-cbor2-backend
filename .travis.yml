@@ -1,25 +1,29 @@
 # see: http://about.travis-ci.org/docs/user/languages/python/
 language: python
-#python:
-  #- 2.7
-  #- 3.4
-  #- 3.5
-  #- 3.6
+python:
+  - 2.7
+  - 3.4
+  - 3.5
+  - 3.6
+  - 3.7
 # see: http://docs.travis-ci.com/user/caching/#pip-cache
 cache: pip
 # see: http://docs.travis-ci.com/user/migrating-from-legacy/
 sudo: false
 matrix:
   include:
-    - python: 2.7
-      env: TOXENV=py27-devel
-    - python: 3.6
-      env: TOXENV=py36-devel
     # https://github.com/travis-ci/travis-ci/issues/9069#issuecomment-425720905
     - python: 3.7
-      env: TOXENV=py37-devel
-      sudo: required
+      sudo: true
       dist: xenial
+#    - python: 2.7
+#      env: TOXENV=py27-devel
+#    - python: 3.6
+#      env: TOXENV=py36-devel
+#    - python: 3.7
+#      env: TOXENV=py37-devel
+#      sudo: required
+#      dist: xenial
 env:
   global:
     - WITH_COVERAGE=1
