@@ -1,5 +1,6 @@
 #
 # Copyright (C) 2018 Satoru SATOH <ssato @ redhat.com>
+# Copyright (C) 2019 Satoru SATOH <satoru.satoh @ gmail.com>
 # License: MIT
 #
 # pylint: disable=too-many-ancestors
@@ -15,6 +16,10 @@ r"""CBOR backend:
   - See also: https://github.com/agronholm/cbor2/blob/master/cbor2/
 
 Changelog:
+.. versionchanged:: 0.0.4
+
+   - enhancement: add _cid to allow users to chose this than cbor explicitely
+
 .. versionchanged:: 0.0.3
 
    - fix: follow internal API changes of the argument for load/dump functions
@@ -31,6 +36,7 @@ class Parser(anyconfig.backend.base.StringStreamFnParser,
     """Parser for CBOR files.
     """
     _type = "cbor"
+    _cid = "cbor2"
     _priority = 10  # Gives higher precedence than cbor.
     _extensions = ["cbor"]
     _loads_opts = ["tag_hook", "object_hook"]
