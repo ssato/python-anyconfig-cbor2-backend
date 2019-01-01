@@ -12,10 +12,10 @@ import unittest
 
 from os import linesep as lsep
 
-import tests.common
 import anyconfig.ioinfo
-
 from anyconfig.compat import OrderedDict
+
+import tests.common
 from tests.common import to_bytes as _bytes
 
 
