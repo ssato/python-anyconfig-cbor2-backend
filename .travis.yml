@@ -15,6 +15,8 @@ matrix:
       env: TOXENV=py27-devel
     - python: 3.6
       env: TOXENV=py36-devel
+    - python: 3.7
+      env: TOXENV=py37-devel
 install:
   - if [[ $TRAVIS_PYTHON_VERSION = '3.3' || $TRAVIS_PYTHON_VERSION = '3.4' ]]; then pip install --upgrade pip; fi
   - pip install -r pkg/test_requirements.txt
