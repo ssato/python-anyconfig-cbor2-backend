@@ -1,2 +1,0 @@
-[anyconfig_backends]
-cbor2=anyconfig_cbor2_backend:Parser
