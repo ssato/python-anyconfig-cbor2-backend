@@ -1,2 +1,2 @@
-anyconfig >= 0.9.8
+anyconfig
 cbor2
