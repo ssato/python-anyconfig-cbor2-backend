@@ -1,49 +1,27 @@
 # see: http://about.travis-ci.org/docs/user/languages/python/
 language: python
-#python:
-#  - 2.7
-#  - 3.4
-#  - 3.5
-#  - 3.6
+python:
+    - 2.7
+    - 3.6
 # see: http://docs.travis-ci.com/user/caching/#pip-cache
 cache: pip
+# .. seealso:: https://github.com/travis-ci/travis-ci/issues/9815
+matrix:
+    include:
+        - python: 3.7
+          dist: xenial
+          sudo: true
+
 # see: http://docs.travis-ci.com/user/migrating-from-legacy/
 sudo: false
-matrix:
-  include:
-    - python: 2.7
-      env: TOXENV=py27
-    - python: 3.4
-      env: TOXENV=py34
-    - python: 3.5
-      env: TOXENV=py35
-    - python: 3.6
-      env: TOXENV=py36
-    # https://github.com/travis-ci/travis-ci/issues/9069#issuecomment-425720905
-    - python: 3.7
-      env: TOXENV=py37
-      sudo: true
-      dist: xenial
-#    - python: 2.7
-#      env: TOXENV=py27-devel
-#    - python: 3.6
-#      env: TOXENV=py36-devel
-#    - python: 3.7
-#      env: TOXENV=py37-devel
-#      sudo: required
-#      dist: xenial
-env:
-  global:
-    - WITH_COVERAGE=1
-    - WITH_DEPS=true
 install:
-  - pip install tox
+    - pip install tox-travis
 script:
-  - tox
+    - tox
 after_success:
   - coveralls
 notifications:
-  email:
-    recipients:
-      - satoru.satoh+github@gmail.com
-    on_failure: always
+    email:
+        recipients:
+            - satoru.satoh+github@gmail.com
+        on_failure: always
