@@ -45,9 +45,9 @@ Build & Install
       $ sudo dnf copr enable ssato/python-anyconfig
       $ sudo dnf install -y python3-anyconfig-cbor2-backend
 
-- PyPI: pip install anyconfig-cbor2-backend
-- pip from git repo: pip install git+https://github.com/ssato/python-anyconfig-cbor2-backend/
-- Build SRPMs, RPMs and install it: python setup.py srpm && mock dist/<package>-<ver_dist>.src.rpm
+- PyPI: pip3 install anyconfig-cbor2-backend
+- pip from git repo: pip3 install git+https://github.com/ssato/python-anyconfig-cbor2-backend/
+- Build SRPMs, RPMs and install it: python3 setup.py bdist_rpm --source-only && mock dist/python3-anyconfig-\*-backend-<ver_dist>.src.rpm
 - Others: try usual ways to build and/or install python modules such like 'python setup.py bdist', etc.
 
 .. vim:sw=2:ts=2:et:
