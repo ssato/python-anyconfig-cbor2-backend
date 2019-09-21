@@ -27,8 +27,10 @@ Changelog:
 .. versionadded:: 0.0.2
 """
 from __future__ import absolute_import
-import anyconfig.backend.base
+
 import cbor2
+import anyconfig.backend.base
+from anyconfig.backend.base import to_method
 
 
 class Parser(anyconfig.backend.base.StringStreamFnParser,
@@ -43,9 +45,9 @@ class Parser(anyconfig.backend.base.StringStreamFnParser,
     _dump_opts = ["datetime_as_timestamp", "timezone", "value_sharing",
                   "default"]
 
-    _load_from_string_fn = anyconfig.backend.base.to_method(cbor2.loads)
-    _load_from_stream_fn = anyconfig.backend.base.to_method(cbor2.load)
-    _dump_to_string_fn = anyconfig.backend.base.to_method(cbor2.dumps)
-    _dump_to_stream_fn = anyconfig.backend.base.to_method(cbor2.dump)
+    _load_from_string_fn = to_method(cbor2.loads)
+    _load_from_stream_fn = to_method(cbor2.load)
+    _dump_to_string_fn = to_method(cbor2.dumps)
+    _dump_to_stream_fn = to_method(cbor2.dump)
 
 # vim:sw=4:ts=4:et:
