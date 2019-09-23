@@ -4,4 +4,4 @@ include README.*
 include pkg/*
 include setup.*
 recursive-include anyconfig_cbor2_backend *.py
-recursive-include tests *.py *.cbor
+recursive-include tests *.py *.cbor *.bats
