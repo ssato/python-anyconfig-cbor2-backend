@@ -15,7 +15,7 @@ various configuration files like INI, JSON and YAML.
 
 Name:           python-%{pkgname}
 Version:        @VERSION@
-Release:        1%{?dist}
+Release:        @RELEASE@%{?dist}
 Summary:        Backend module for python-anyconfig to load and dump CBOR data
 License:        MIT
 URL:            https://github.com/ssato/python-anyconfig-cbor2-backend
