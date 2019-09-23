@@ -67,12 +67,12 @@ Requires:       python3-cbor2
 
 %if %{with python2}
 %files -n python2-%{pkgname}
-%doc README.rst
+%doc README.rst NEWS
 %{python2_sitelib}/*
 %endif
 
 %files -n python3-%{pkgname}
-%doc README.rst
+%doc README.rst NEWS
 %{python3_sitelib}/*
 
 %changelog
