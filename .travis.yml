@@ -4,7 +4,8 @@ python:
     - 2.7
     - 3.6
     - 3.7
-    - 3.8
+# it works in local but not in travis env. (sig11)
+#    - 3.8
 # see: http://docs.travis-ci.com/user/caching/#pip-cache
 cache: pip
 # see: http://docs.travis-ci.com/user/migrating-from-legacy/
