@@ -1,11 +1,12 @@
 #
-# Copyright (C) 2018 Satoru SATOH <ssato @ redhat.com>
+# Copyright (C) 2020 Satoru SATOH <satoru.satoh @ gmail.com>
 # License: MIT
 #
 # pylint: disable=missing-docstring,invalid-name,too-few-public-methods
 from __future__ import absolute_import
 
-import anyconfig_cbor2_backend.cbor2 as TT
+import anyconfig_cbor2_backend as TT
+import cbor2
 import tests.common as TBC
 
 
@@ -13,7 +14,7 @@ class HasParserTrait(TBC.HasParserTrait):
 
     psr = TT.Parser()
     cnf = dict(a=0, b="bbb", c=5, sect0=dict(d=["x", "y", "z"]))
-    cnf_s = TT.cbor2.dumps(cnf)
+    cnf_s = cbor2.dumps(cnf)
 
 
 class Test_10(TBC.Test_10_dumps_and_loads, HasParserTrait):
