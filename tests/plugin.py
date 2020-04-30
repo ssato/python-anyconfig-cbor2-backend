@@ -19,7 +19,7 @@ _CID = "cbor2"  # .. seealso:: anyconfig_cbor2_backend/cbor2.py
 
 class Test(unittest.TestCase):
 
-    conf_path = os.path.join(_CURDIR, "0.cbor")
+    conf_path = os.path.join(_CURDIR, "res", "0.cbor")
 
     def _load_helper(self, **kwargs):
         try:
