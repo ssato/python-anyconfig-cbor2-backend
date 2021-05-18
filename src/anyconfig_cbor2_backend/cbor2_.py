@@ -1,6 +1,5 @@
 #
-# Copyright (C) 2018 Satoru SATOH <ssato @ redhat.com>
-# Copyright (C) 2019 Satoru SATOH <satoru.satoh @ gmail.com>
+# Copyright (C) 2018 - 2021 Satoru SATOH <satoru.satoh @ gmail.com>
 # License: MIT
 #
 # pylint: disable=too-many-ancestors
@@ -26,15 +25,14 @@ Changelog:
 
 .. versionadded:: 0.0.2
 """
-from __future__ import absolute_import
-
 import cbor2
+
 import anyconfig.backend.base
-from anyconfig.backend.base import to_method
 
 
 class Parser(anyconfig.backend.base.StringStreamFnParser,
-             anyconfig.backend.base.BinaryFilesMixin):
+             anyconfig.backend.base.BinaryLoaderMixin,
+             anyconfig.backend.base.BinaryDumperMixin):
     """Parser for CBOR files.
     """
     _type = "cbor"
@@ -45,9 +43,9 @@ class Parser(anyconfig.backend.base.StringStreamFnParser,
     _dump_opts = ["datetime_as_timestamp", "timezone", "value_sharing",
                   "default"]
 
-    _load_from_string_fn = to_method(cbor2.loads)
-    _load_from_stream_fn = to_method(cbor2.load)
-    _dump_to_string_fn = to_method(cbor2.dumps)
-    _dump_to_stream_fn = to_method(cbor2.dump)
+    _load_from_string_fn = anyconfig.backend.base.to_method(cbor2.loads)
+    _load_from_stream_fn = anyconfig.backend.base.to_method(cbor2.load)
+    _dump_to_string_fn = anyconfig.backend.base.to_method(cbor2.dumps)
+    _dump_to_stream_fn = anyconfig.backend.base.to_method(cbor2.dump)
 
 # vim:sw=4:ts=4:et:
